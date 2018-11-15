@@ -6,4 +6,7 @@
     <string name="code2">Code 2</string>
     <string name="code3">Code 3</string>
     <string name="code4">Code 4</string>
+
+    <string name="textViewText">Recherche pour :</string>
+    <string name="backButton">Retour</string>
 </resources>

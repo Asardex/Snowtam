@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Snowtam</string>
+    <string name="searchButton">Rechercher</string>
+    <string name="code1">Code 1</string>
+    <string name="code2">Code 2</string>
+    <string name="code3">Code 3</string>
+    <string name="code4">Code 4</string>
+</resources>

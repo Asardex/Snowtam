@@ -32,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
         EditText code2 = (EditText)findViewById(R.id.code2);
         EditText code3 = (EditText)findViewById(R.id.code3);
         EditText code4 = (EditText)findViewById(R.id.code4);
-        CharSequence codes = "\n" + code1.getText().toString() +
-                             "\n" + code2.getText().toString() +
-                             "\n" + code3.getText().toString() +
-                             "\n" + code4.getText().toString();
-        intent.putExtra("codes", codes);
+
+        intent.putExtra("code1", code1.getText().toString());
+        intent.putExtra("code2", code2.getText().toString());
+        intent.putExtra("code3", code3.getText().toString());
+        intent.putExtra("code4", code4.getText().toString());
         startActivity(intent);
     }
 }

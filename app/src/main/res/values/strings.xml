@@ -8,4 +8,7 @@
 
     <string name="textViewText">Search for :</string>
     <string name="backButton">Back</string>
+    <string name="buttonC1">First</string>
+
+
 </resources>

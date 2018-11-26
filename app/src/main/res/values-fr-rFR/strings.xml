@@ -9,4 +9,6 @@
 
     <string name="textViewText">Recherche pour :</string>
     <string name="backButton">Retour</string>
+    <string name="buttonC1">Premier</string>
+
 </resources>

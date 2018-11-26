@@ -1,10 +1,12 @@
 package com.example.quent.snowtam;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.android.volley.Cache;
@@ -56,6 +58,19 @@ public class Main2Activity extends AppCompatActivity {
                 finish();
             }
         });
+
+        final Button buttonC1 = findViewById(R.id.buttonC1);
+        buttonC1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                goActivitySimple();
+            }
+        });
+    }
+
+    private void goActivitySimple() {
+        Context context = getApplicationContext();
+        Intent intent = new Intent(context, MapsActivity.class);
+        startActivity(intent);
     }
 
     private void GetAndDispSnowtam() {

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,7 +24,11 @@ import com.android.volley.toolbox.StringRequest;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,6 +36,7 @@ import java.util.Map;
 public class Main2Activity extends AppCompatActivity {
 
     ArrayList<String> locations = new ArrayList<String>();
+    ArrayList<String> arp = new ArrayList<String>();
     Map<String, String> snowtam = new HashMap<String, String>();
 
     @Override
@@ -46,7 +52,9 @@ public class Main2Activity extends AppCompatActivity {
         locations.add(intent.getStringExtra("code4"));
 
         try {
+            GetAndDispARP();
             GetAndDispSnowtam();
+
         } catch(Exception ex) {
             TextView tv = (TextView) findViewById(R.id.textView);
             tv.setText("erreur exception");
@@ -139,5 +147,47 @@ public class Main2Activity extends AppCompatActivity {
             }
         }
         return "null";
+    }
+
+    private void GetAndDispARP() {
+        final StringBuilder urlBuilderPos = new StringBuilder();
+        urlBuilderPos.append("https://www.world-airport-codes.com/search/?s=");
+        Thread t = new Thread(new Runnable(){
+            @Override
+            public void run() {
+                recuperationARPJsoup(urlBuilderPos);
+
+            }
+        });
+        t.start();
+
+    }
+
+    public void recuperationARPJsoup(final StringBuilder urle){
+        final TextView tva = (TextView) findViewById(R.id.textView2);
+        for(int i = 0; i < locations.size(); i++) {
+            if(!locations.get(i).startsWith("Code"))
+            {
+            Log.d("salut2", locations.get(i));
+            String url = urle.toString() + locations.get(i);
+            Document doc = null;
+            try {
+                doc = Jsoup.connect(url).get();
+                Element airport = doc.getElementById("map-airport");
+                String coord = airport.attr("data-location");
+                arp.add(coord);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            }else{
+                arp.add("Erreur");
+            }
+            Log.d("salut3", arp.get(i));
+        }
+        String gpsCoord = "";
+        for(int i = 0; i< arp.size();i++){
+            gpsCoord += arp.get(i) + "\n";
+        }
+        tva.setText(gpsCoord);
     }
 }

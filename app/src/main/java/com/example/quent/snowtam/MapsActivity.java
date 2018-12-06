@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -60,23 +61,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 finish();
             }
         });
-        final TextView tvCode = (TextView) findViewById(R.id.textView3);
-        final Switch switch1 = findViewById(R.id.switch1);
-        tvCode.setText("Decode");
-        switch1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
-
-                if(switch1.isChecked())
-                {
-                    tvCode.setText("Decode");
-                }else {
-                    tvCode.setText("Code");
-                }
-            }
-        });
-
-
-
     }
 
 

@@ -37,7 +37,7 @@ public class Snowtam {
             parseSnowtam(snowtamString);
             translateSnowtam();
         } else {
-            Log.d("SNOWTAM", "Snowtam non ouvert ou terminé");
+            Log.d("SNOWTAM1", "Snowtam non ouvert ou terminé");
         }
     }
 

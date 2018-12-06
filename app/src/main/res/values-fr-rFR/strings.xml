@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Snowtam</string>
     <string name="searchButton">Rechercher</string>
-    <string name="code1">Code 1</string>
+    <string name="code1">Entrez votre code ICAO</string>
     <string name="code2">Code 2</string>
     <string name="code3">Code 3</string>
     <string name="code4">Code 4</string>
@@ -10,6 +10,12 @@
     <string name="textViewText">Recherche pour :</string>
     <string name="textViewText2">Coordonnee GPS :</string>
     <string name="backButton">Retour</string>
-    <string name="buttonC1">Premier</string>
+    <string name="buttonC1">Carte</string>
+    <string name="switchOn">D</string>
+    <string name="switchOff">C</string>
+    <string name="snowtamDisp">Il n y a pas de Snowtam disponible</string>
+
+    <string name="dialog_message">Merci d\'entrer un indentificateur d\'aéroport valide</string>
+    <string name="dialog_title">Erreur</string>
 
 </resources>

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Snowtam</string>
     <string name="searchButton">Search</string>
-    <string name="code1">Code 1</string>
+    <string name="code1">Enter your ICAO code</string>
     <string name="code2">Code 2</string>
     <string name="code3">Code 3</string>
     <string name="code4">Code 4</string>
@@ -9,8 +9,14 @@
     <string name="textViewText">Search for :</string>
     <string name="textViewText2">GPS Location :</string>
     <string name="backButton">Back</string>
-    <string name="buttonC1">First</string>
+    <string name="buttonC1">Map</string>
+    <string name="switchOn">D</string>
+    <string name="switchOff">C</string>
+    <string name="snowtamDisp">No Snowtam available</string>
 
+    <string name="dialog_message">Please enter a valid aerodrome location indicator</string>
+    <string name="dialog_title">Error</string>
+    <string name="ok" translatable="false">OK</string>
 
 
 </resources>

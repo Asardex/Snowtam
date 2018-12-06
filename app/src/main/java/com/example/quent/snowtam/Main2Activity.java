@@ -4,10 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.android.volley.Cache;
@@ -67,12 +69,7 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
 
-        final Button buttonC1 = findViewById(R.id.buttonC1);
-        buttonC1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                goActivitySimple();
-            }
-        });
+
     }
 
     private void goActivitySimple() {
@@ -129,9 +126,44 @@ public class Main2Activity extends AppCompatActivity {
                         String out = new String();
                         for (String key : snowtam.keySet()) {
                             //out += key + " : " + snowtam.get(key) + "\n\n\n";
-                            snowtamObjects.add(new Snowtam(snowtam.get(key)));
+                            if(snowtam.get(key).compareToIgnoreCase("null")!=0) {
+                                snowtamObjects.add(new Snowtam(snowtam.get(key)));
+                            }
                         }
-                        tv.setText(snowtamObjects.get(0).toString() + "\n\n\n" + snowtamObjects.get(0).translated());
+                        //tv.setText(snowtamObjects.get(0).toString() + "\n\n\n" + snowtamObjects.get(0).translated());
+                        final Switch switch1 = findViewById(R.id.switch1);
+
+                        if(!snowtamObjects.isEmpty())
+                        {
+                            Log.d("salut44", snowtamObjects.get(0).toString());
+                            tv.setText(snowtamObjects.get(0).translated());
+                            switch1.setOnClickListener(new View.OnClickListener() {
+                                public void onClick(View v){
+
+                                    if(switch1.isChecked())
+                                    {
+                                        tv.setText(snowtamObjects.get(0).translated());
+
+                                    }else {
+                                        tv.setText(snowtamObjects.get(0).toString());
+                                    }
+                                }
+                            });
+                        }else{
+                            //Log.d("salut44", snowtamObjects.toString());
+                            tv.setText(R.string.snowtamDisp);
+                            switch1.setOnClickListener(new View.OnClickListener() {
+                                public void onClick(View v){
+
+                                    if(switch1.isChecked())
+                                    {
+                                    }else {
+                                    }
+                                }
+                            });
+                        }
+
+                        tv.setMovementMethod(new ScrollingMovementMethod());
                     }
                 },
                 new Response.ErrorListener() {
@@ -180,6 +212,8 @@ public class Main2Activity extends AppCompatActivity {
 
     public void recuperationARPJsoup(final StringBuilder urle){
         final TextView tva = (TextView) findViewById(R.id.textView2);
+        final Button buttonC1 = findViewById(R.id.buttonC1);
+        buttonC1.setClickable(false);
         for(int i = 0; i < locations.size(); i++) {
             if(!locations.get(i).startsWith("Code"))
             {
@@ -207,5 +241,14 @@ public class Main2Activity extends AppCompatActivity {
             gpsCoord += nameAP.get(i) + "\n" +arp.get(i) + "\n";
         }
         tva.setText(gpsCoord);
+        buttonC1.setClickable(true);
+        if(!gpsCoord.startsWith("Erreur"))
+        {
+            buttonC1.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    goActivitySimple();
+                }
+            });
+        }
     }
 }

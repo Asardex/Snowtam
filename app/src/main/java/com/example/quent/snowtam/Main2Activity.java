@@ -28,6 +28,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.jsoup.Jsoup;
+import org.jsoup.helper.Validate;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
@@ -124,10 +125,10 @@ public class Main2Activity extends AppCompatActivity {
                         for(int i = 0; i < locations.size(); i++) {
                             snowtam.put(locations.get(i), GetSnowtam(response, locations.get(i)));
                         }
-                        String out = new String();
+                        //String out = new String();
                         for (String key : snowtam.keySet()) {
                             //out += key + " : " + snowtam.get(key) + "\n\n\n";
-                            if(snowtam.get(key).compareToIgnoreCase("null")!=0) {
+                            if(snowtam.get(key).compareToIgnoreCase("null") != 0) {
                                 snowtamObjects.add(new Snowtam(snowtam.get(key)));
                             }
                         }

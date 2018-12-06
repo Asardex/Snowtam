@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Context context = getApplicationContext();
             Intent intent = new Intent(context, Main2Activity.class);
-            intent.putExtra("code1", code1.getText().toString());
+            intent.putExtra("code1", code1.getText().toString().toUpperCase());
             startActivity(intent);
         }
     }

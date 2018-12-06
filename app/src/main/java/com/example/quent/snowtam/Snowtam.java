@@ -32,7 +32,7 @@ public class Snowtam {
     private String snowtamTranslated;
 
     public Snowtam(String snowtamString) {
-        if(snowtamString.contains("(") && snowtamString.contains(".)")) {
+        if(snowtamString.contains("(") && snowtamString.contains(")")) {
             snowtam = snowtamString;
             parseSnowtam(snowtamString);
             translateSnowtam();

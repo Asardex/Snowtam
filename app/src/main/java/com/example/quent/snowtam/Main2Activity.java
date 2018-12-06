@@ -239,11 +239,17 @@ public class Main2Activity extends AppCompatActivity {
             }
             Log.d("salut3", nameAP.get(i));
         }
+
         String gpsCoord = "";
         for(int i = 0; i< arp.size();i++){
-            gpsCoord += nameAP.get(i) + "\nLat.: ";
-            gpsCoord += arp.get(i).split("\\,")[0] + "\nLong.: ";
-            gpsCoord += arp.get(i).split("\\,")[1];
+            if(arp.get(i).contains(",")) {
+                gpsCoord += nameAP.get(i) + "\nLat.: ";
+                gpsCoord += arp.get(i).split("\\,")[0] + "\nLong.: ";
+                gpsCoord += arp.get(i).split("\\,")[1];
+            }
+            else{
+                gpsCoord = "Erreur";
+            }
         }
 
         buttonC1.setEnabled(true);

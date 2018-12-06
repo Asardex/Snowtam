@@ -42,14 +42,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         arp.add(intent.getStringExtra("airportLoc1"));
+        /*
         arp.add(intent.getStringExtra("airportLoc2"));
         arp.add(intent.getStringExtra("airportLoc3"));
         arp.add(intent.getStringExtra("airportLoc4"));
-
+*/
         locations.add(intent.getStringExtra("code1"));
+        /*
         locations.add(intent.getStringExtra("code2"));
         locations.add(intent.getStringExtra("code3"));
         locations.add(intent.getStringExtra("code4"));
+*/
 
         final Button button = findViewById(R.id.buttonBackResult);
         button.setOnClickListener(new View.OnClickListener() {

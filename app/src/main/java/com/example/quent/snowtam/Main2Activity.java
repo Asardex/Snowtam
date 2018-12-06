@@ -40,6 +40,8 @@ public class Main2Activity extends AppCompatActivity {
     ArrayList<String> nameAP = new ArrayList<String>();
     Map<String, String> snowtam = new HashMap<String, String>();
 
+    ArrayList<Snowtam> snowtamObjects = new ArrayList<Snowtam>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,9 +50,6 @@ public class Main2Activity extends AppCompatActivity {
         Intent intent = getIntent();
 
         locations.add(intent.getStringExtra("code1"));
-        locations.add(intent.getStringExtra("code2"));
-        locations.add(intent.getStringExtra("code3"));
-        locations.add(intent.getStringExtra("code4"));
 
         try {
             GetAndDispARP();
@@ -81,14 +80,17 @@ public class Main2Activity extends AppCompatActivity {
         Intent intent = new Intent(context, MapsActivity.class);
 
         intent.putExtra("code1",locations.get(0));
+        /*
         intent.putExtra("code2",locations.get(1));
         intent.putExtra("code3",locations.get(2));
         intent.putExtra("code4",locations.get(3));
-
+*/
         intent.putExtra("airportLoc1",arp.get(0));
+        /*
         intent.putExtra("airportLoc2",arp.get(1));
         intent.putExtra("airportLoc3",arp.get(2));
         intent.putExtra("airportLoc4",arp.get(3));
+*/
 
         startActivity(intent);
     }
@@ -126,9 +128,10 @@ public class Main2Activity extends AppCompatActivity {
                         }
                         String out = new String();
                         for (String key : snowtam.keySet()) {
-                            out += key + " : " + snowtam.get(key) + "\n\n\n";
+                            //out += key + " : " + snowtam.get(key) + "\n\n\n";
+                            snowtamObjects.add(new Snowtam(snowtam.get(key)));
                         }
-                        tv.setText(out);
+                        tv.setText(snowtamObjects.get(0).toString() + "\n\n\n" + snowtamObjects.get(0).translated());
                     }
                 },
                 new Response.ErrorListener() {

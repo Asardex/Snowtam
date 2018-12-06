@@ -65,68 +65,29 @@
         app:layout_constraintTop_toTopOf="@+id/guideline10V"
         app:layout_constraintVertical_bias="0.0" />
 
-    <EditText
-        android:id="@+id/code2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/code2"
-        app:layout_constraintBottom_toTopOf="@+id/guideline25V"
-        app:layout_constraintEnd_toStartOf="@+id/guideline50H"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline50H"
-        app:layout_constraintTop_toTopOf="@+id/guideline25V"
-        app:layout_constraintVertical_bias="0.388" />
-
-    <EditText
-        android:id="@+id/code3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/code3"
-        app:layout_constraintBottom_toTopOf="@+id/guideline40V"
-        app:layout_constraintEnd_toStartOf="@+id/guideline50H"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline50H"
-        app:layout_constraintTop_toTopOf="@+id/guideline40V"
-        app:layout_constraintVertical_bias="0.518" />
-
-    <EditText
-        android:id="@+id/code4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/code4"
-        app:layout_constraintBottom_toTopOf="@+id/guideline55V"
-        app:layout_constraintEnd_toStartOf="@+id/guideline50H"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline50H"
-        app:layout_constraintTop_toTopOf="@+id/guideline55V" />
-
     <Button
         android:id="@+id/buttonSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:text="@string/searchButton"
-        app:layout_constraintBottom_toTopOf="@+id/guideline80V"
+        app:layout_constraintBottom_toTopOf="@+id/guideline25V"
         app:layout_constraintEnd_toStartOf="@+id/guideline50H"
         app:layout_constraintStart_toStartOf="@+id/guideline50H"
-        app:layout_constraintTop_toTopOf="@+id/guideline80V" />
+        app:layout_constraintTop_toTopOf="@+id/guideline25V" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="387dp" />
+        android:layout_width="184dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="logo"
+        app:layout_constraintBottom_toTopOf="@+id/guideline55V"
+        app:layout_constraintEnd_toStartOf="@+id/guideline50H"
+        app:layout_constraintStart_toStartOf="@+id/guideline50H"
+        app:layout_constraintTop_toTopOf="@+id/guideline55V"
+        app:srcCompat="@mipmap/ic_launcher_foreground" />
 
 </android.support.constraint.ConstraintLayout>

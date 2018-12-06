@@ -60,10 +60,10 @@
         android:text="@string/code1"
         app:layout_constraintBottom_toTopOf="@+id/guideline10V"
         app:layout_constraintEnd_toStartOf="@+id/guideline50H"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/guideline50H"
         app:layout_constraintTop_toTopOf="@+id/guideline10V"
-        app:layout_constraintVertical_bias="0.796" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/code2"
@@ -120,5 +120,13 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline50H"
         app:layout_constraintStart_toStartOf="@+id/guideline50H"
         app:layout_constraintTop_toTopOf="@+id/guideline80V" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="387dp" />
 
 </android.support.constraint.ConstraintLayout>

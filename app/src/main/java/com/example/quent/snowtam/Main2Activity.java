@@ -37,6 +37,7 @@ public class Main2Activity extends AppCompatActivity {
 
     ArrayList<String> locations = new ArrayList<String>();
     ArrayList<String> arp = new ArrayList<String>();
+    ArrayList<String> nameAP = new ArrayList<String>();
     Map<String, String> snowtam = new HashMap<String, String>();
 
     @Override
@@ -78,6 +79,17 @@ public class Main2Activity extends AppCompatActivity {
     private void goActivitySimple() {
         Context context = getApplicationContext();
         Intent intent = new Intent(context, MapsActivity.class);
+
+        intent.putExtra("code1",locations.get(0));
+        intent.putExtra("code2",locations.get(1));
+        intent.putExtra("code3",locations.get(2));
+        intent.putExtra("code4",locations.get(3));
+
+        intent.putExtra("airportLoc1",arp.get(0));
+        intent.putExtra("airportLoc2",arp.get(1));
+        intent.putExtra("airportLoc3",arp.get(2));
+        intent.putExtra("airportLoc4",arp.get(3));
+
         startActivity(intent);
     }
 
@@ -174,19 +186,22 @@ public class Main2Activity extends AppCompatActivity {
             try {
                 doc = Jsoup.connect(url).get();
                 Element airport = doc.getElementById("map-airport");
+                Element name = doc.getElementsByClass("airport-title").first();
                 String coord = airport.attr("data-location");
                 arp.add(coord);
+                nameAP.add(name.ownText());
             } catch (IOException e) {
                 e.printStackTrace();
             }
             }else{
                 arp.add("Erreur");
+                nameAP.add("ErreurName");
             }
-            Log.d("salut3", arp.get(i));
+            Log.d("salut3", nameAP.get(i));
         }
         String gpsCoord = "";
         for(int i = 0; i< arp.size();i++){
-            gpsCoord += arp.get(i) + "\n";
+            gpsCoord += nameAP.get(i) + "\n" +arp.get(i) + "\n";
         }
         tva.setText(gpsCoord);
     }

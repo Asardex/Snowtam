@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -213,7 +214,7 @@ public class Main2Activity extends AppCompatActivity {
     public void recuperationARPJsoup(final StringBuilder urle){
         final TextView tva = (TextView) findViewById(R.id.textView2);
         final Button buttonC1 = findViewById(R.id.buttonC1);
-        buttonC1.setClickable(false);
+        final ProgressBar simpleProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         for(int i = 0; i < locations.size(); i++) {
             if(!locations.get(i).startsWith("Code"))
             {
@@ -241,14 +242,17 @@ public class Main2Activity extends AppCompatActivity {
             gpsCoord += nameAP.get(i) + "\n" +arp.get(i) + "\n";
         }
         tva.setText(gpsCoord);
-        buttonC1.setClickable(true);
+        buttonC1.setEnabled(true);
+        simpleProgressBar.setVisibility(View.INVISIBLE);
         if(!gpsCoord.startsWith("Erreur"))
         {
+
             buttonC1.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     goActivitySimple();
                 }
             });
+        }else{
         }
     }
 }

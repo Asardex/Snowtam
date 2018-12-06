@@ -11,17 +11,17 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="140dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="40dp"
         android:scrollbars="vertical"
         android:text="@string/textViewText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView2"
@@ -39,27 +39,27 @@
         android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:text="@string/backButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonC1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="148dp"
         android:layout_marginTop="8dp"
         android:text="@string/buttonC1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:enabled="false" />
 
     <Switch
         android:id="@+id/switch1"
-        android:layout_width="111dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="11dp"
         android:checked="true"
         android:showText="true"
@@ -68,7 +68,16 @@
         android:textOff="@string/switchOff"
         android:textOn="@string/switchOn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/app_name" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="35dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/buttonC1"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

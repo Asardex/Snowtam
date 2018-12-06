@@ -57,13 +57,23 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 finish();
             }
         });
-
-        //set switch mode depending of settings
+        final TextView tvCode = (TextView) findViewById(R.id.textView3);
         final Switch switch1 = findViewById(R.id.switch1);
+        tvCode.setText("Decode");
+        switch1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
 
-        TextView tvCode = (TextView) findViewById(R.id.textView3);
-        tvCode.setVisibility(View.INVISIBLE);
-        TextView tvDecode = (TextView) findViewById(R.id.textView4);
+                if(switch1.isChecked())
+                {
+                    tvCode.setText("Decode");
+                }else {
+                    tvCode.setText("Code");
+                }
+            }
+        });
+
+
+
     }
 
 

@@ -66,15 +66,15 @@ public class Snowtam {
         translateT();
 
         snowtamTranslated = new String();
-        snowtamTranslated = indicateurEmplacement_decode + "\n" +
-                publicationDate_decode + "\n";
+        snowtamTranslated = indicateurEmplacement_decode + "\n\n" +
+                publicationDate_decode + "\n\n";
         for (Runway r : runways) {
             snowtamTranslated += r.translated();
         }
         if(!airDeTrafic_decode.isEmpty())
-            snowtamTranslated += airDeTrafic_decode + "\n";
+            snowtamTranslated += airDeTrafic_decode + "\n\n";
         if(!prochaineObservation_decode.isEmpty())
-            snowtamTranslated += prochaineObservation_decode + "\n";
+            snowtamTranslated += prochaineObservation_decode + "\n\n";
         if(!remarques_decode.isEmpty())
             snowtamTranslated += remarques_decode;
         Log.d("SNOWTAM", "'" + snowtamTranslated + "'");

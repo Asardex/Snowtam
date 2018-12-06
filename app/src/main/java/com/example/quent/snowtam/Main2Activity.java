@@ -2,6 +2,7 @@ package com.example.quent.snowtam;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -105,7 +106,7 @@ public class Main2Activity extends AppCompatActivity {
 
         String url;
         StringBuilder urlBuilder = new StringBuilder();
-        urlBuilder.append("https://v4p4sz5ijk.execute-api.us-east-1.amazonaws.com/anbdata/states/notams/notams-list?api_key=2fa58190-ee45-11e8-852d-f95e0e648a6f&format=json&type=&Qcode=&locations=");
+        urlBuilder.append("https://v4p4sz5ijk.execute-api.us-east-1.amazonaws.com/anbdata/states/notams/notams-list?api_key=9df2f420-f95d-11e8-af43-dd59054eb05a&format=json&type=&Qcode=&locations=");
         for(int i = 0; i < locations.size(); i++) {
             if(i == (locations.size()-1)) {
                 urlBuilder.append(locations.get(i));
@@ -240,7 +241,9 @@ public class Main2Activity extends AppCompatActivity {
         }
         String gpsCoord = "";
         for(int i = 0; i< arp.size();i++){
-            gpsCoord += nameAP.get(i) + "\n" +arp.get(i) + "\n";
+            gpsCoord += nameAP.get(i) + "\nLat.: ";
+            gpsCoord += arp.get(i).split("\\,")[0] + "\nLong.: ";
+            gpsCoord += arp.get(i).split("\\,")[1];
         }
 
         buttonC1.setEnabled(true);

@@ -87,27 +87,27 @@ class Runway {
         translateP();
 
         runwayTranslated = new String();
-        runwayTranslated = ident_decode + "\n";
+        runwayTranslated = ident_decode + "\n\n";
         if(!longDeblayee_decode.isEmpty())
-            runwayTranslated += longDeblayee_decode + "\n";
+            runwayTranslated += longDeblayee_decode + "\n\n";
         if(!largDeblayee_decode.isEmpty())
-            runwayTranslated += largDeblayee_decode + "\n";
+            runwayTranslated += largDeblayee_decode + "\n\n";
         if(!condition_decode.isEmpty())
-            runwayTranslated += condition_decode + "\n";
+            runwayTranslated += condition_decode + "\n\n";
         if(!epaisseur_decode.isEmpty())
-            runwayTranslated += epaisseur_decode + "\n";
+            runwayTranslated += epaisseur_decode + "\n\n";
         if(!coefFrottement_decode.isEmpty())
-            runwayTranslated += coefFrottement_decode + "\n";
+            runwayTranslated += coefFrottement_decode + "\n\n";
         if(!congereCritique_decode.isEmpty())
-            runwayTranslated += congereCritique_decode + "\n";
+            runwayTranslated += congereCritique_decode + "\n\n";
         if(!feux_decode.isEmpty())
-            runwayTranslated += feux_decode + "\n";
+            runwayTranslated += feux_decode + "\n\n";
         if(!dimensionsDeblayementAVenir_decode.isEmpty())
-            runwayTranslated += dimensionsDeblayementAVenir_decode + "\n";
+            runwayTranslated += dimensionsDeblayementAVenir_decode + "\n\n";
         if(!heureFinDelayement_decode.isEmpty())
-            runwayTranslated += heureFinDelayement_decode + "\n";
+            runwayTranslated += heureFinDelayement_decode + "\n\n";
         if(!etatTaxiways_decode.isEmpty())
-            runwayTranslated += etatTaxiways_decode + "\n";
+            runwayTranslated += etatTaxiways_decode + "\n\n";
         if(!bancsNeige_decode.isEmpty())
             runwayTranslated += bancsNeige_decode;
 

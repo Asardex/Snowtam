@@ -217,24 +217,24 @@ public class Main2Activity extends AppCompatActivity {
         final Button buttonC1 = findViewById(R.id.buttonC1);
         final ProgressBar simpleProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         for(int i = 0; i < locations.size(); i++) {
-            if(!locations.get(i).startsWith("Code"))
-            {
             Log.d("salut2", locations.get(i));
             String url = urle.toString() + locations.get(i);
             Document doc = null;
             try {
                 doc = Jsoup.connect(url).get();
                 Element airport = doc.getElementById("map-airport");
-                Element name = doc.getElementsByClass("airport-title").first();
-                String coord = airport.attr("data-location");
-                arp.add(coord);
-                nameAP.add(name.ownText());
+                if(airport != null)
+                {
+                    Element name = doc.getElementsByClass("airport-title").first();
+                    String coord = airport.attr("data-location");
+                    arp.add(coord);
+                    nameAP.add(name.ownText());
+                }else{
+                    nameAP.add("ErreurName");
+                    arp.add("Erreur");
+                }
             } catch (IOException e) {
                 e.printStackTrace();
-            }
-            }else{
-                arp.add("Erreur");
-                nameAP.add("ErreurName");
             }
             Log.d("salut3", nameAP.get(i));
         }
@@ -242,18 +242,19 @@ public class Main2Activity extends AppCompatActivity {
         for(int i = 0; i< arp.size();i++){
             gpsCoord += nameAP.get(i) + "\n" +arp.get(i) + "\n";
         }
-        tva.setText(gpsCoord);
+
         buttonC1.setEnabled(true);
         simpleProgressBar.setVisibility(View.INVISIBLE);
         if(!gpsCoord.startsWith("Erreur"))
         {
-
+            tva.setText(gpsCoord);
             buttonC1.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     goActivitySimple();
                 }
             });
         }else{
+            tva.setText(R.string.airportDisp);
         }
     }
 }

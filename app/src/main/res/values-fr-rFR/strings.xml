@@ -14,6 +14,7 @@
     <string name="switchOn">D</string>
     <string name="switchOff">C</string>
     <string name="snowtamDisp">Il n y a pas de Snowtam disponible</string>
+    <string name="airportDisp">Code ICAO Invalide</string>
 
     <string name="dialog_message">Merci d\'entrer un indentificateur d\'aéroport valide</string>
     <string name="dialog_title">Erreur</string>

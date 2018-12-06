@@ -13,6 +13,7 @@
     <string name="switchOn">D</string>
     <string name="switchOff">C</string>
     <string name="snowtamDisp">No Snowtam available</string>
+    <string name="airportDisp">Invalid ICAO code</string>
 
     <string name="dialog_message">Please enter a valid aerodrome location indicator</string>
     <string name="dialog_title">Error</string>
